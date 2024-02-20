@@ -1,5 +1,6 @@
 [package]
 name = "learning-rust"
+description = "Generate 20 character passwords with clipboard functionality"
 version = "0.1.0"
 authors = ["acurzon <adam@curzon.org>"]
 edition = "2021"
@@ -15,3 +16,8 @@ async-std = "1.10.0"
 
 [build-dependencies]
 slint-build = "1.4"
+
+[package.metadata.bundle]
+name = "Password Generator"
+description = "Generate 20 character passwords with clipboard functionality"
+icon = ["./docs/icon.png"]
