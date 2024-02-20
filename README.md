@@ -2,6 +2,8 @@
 
 A password manager that generates random 20 chracter passwords and copys them to your clipboard
 
+<img width="300" src="https://raw.githubusercontent.com/adamcurzon/learning-rust/main/docs/preview.png" />
+
 ## Useful commands
 
 ```
