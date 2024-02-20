@@ -1,16 +1,71 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, VerticalBox, LineEdit } from "std-widgets.slint";
 
 export component AppWindow inherits Window {
-    in-out property<int> counter: 42;
-    callback request-increase-value();
-    VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
+    width: 450px;
+    height: 250px;
+    title: "Password Generator";
+    background: #2c3e50;
+
+    in-out property<string> password: "";
+    in-out property<string> clipboard_text: "Copy to clipboard";
+
+    callback generate_password();
+    callback copy_password();
+
+    GridLayout {
+        width: 400px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+
+        Row {
+            Text {
+                width: 100%;
+                text: "Password Generator";
+                color: white;
+                font-weight: 700;
+                font-size: 30px;
+                horizontal-alignment: center;
+            }
         }
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
+
+        Row {
+            LineEdit {
+                padding-bottom: 20px;
+                width: 400px;
+                text: root.password;
+                font-size: 20px;
+                horizontal-alignment: center;
+                enabled: false;
+            }
+        }
+
+        GridLayout {
+            width: 380px;
+            spacing: 20px;
+            padding-top: 20px;
+            
+            Rectangle {
+                width: 50%;
+                Button {
+                    width: 100%;
+                    height: 50px;
+                    text: "Generate Password";
+                    primary: true;
+                    clicked => {
+                        root.generate_password();
+                    }
+                }
+            }
+            Rectangle {
+                width: 50%;
+                Button {
+                    width: 100%;
+                    height: 50px;
+                    text: clipboard_text;
+                    clicked => {
+                        root.copy_password();
+                    }
+                }
             }
         }
     }
