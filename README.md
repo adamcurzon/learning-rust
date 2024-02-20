@@ -1,6 +1,6 @@
 # 🔐 Password Generator
 
-A password manager that generates random 20 chracter passwords and copys them to your clipboard
+Generate 20 character passwords with clipboard functionality
 
 <img width="300" src="https://raw.githubusercontent.com/adamcurzon/learning-rust/main/docs/preview.png" />
 
